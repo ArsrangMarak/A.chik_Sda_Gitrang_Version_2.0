@@ -1,7 +1,7 @@
 # A∙CHIK SEVENTH-DAY ADVENTIST GITRANG_Version_2.0
 
 
-<table align="left" width="100%" cellpadding="8">
+<table align="Center" width="100%" cellpadding="8">
   <tr>
     <td align="center"><img src="/Previews/1.png" width="200" alt="1" /></td>
     <td align="center"><img src="/Previews/2.png" width="200" alt="2" /></td>
