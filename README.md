@@ -8,14 +8,14 @@
     <td align="center"><img src="/Previews/3.png" width="400" alt="3" /></td>
   </tr>
   <tr>
-    <td align="center"><img src="/Previews/4.png" width="200" alt="4" /></td>
-    <td align="center"><img src="/Previews/5.png" width="200" alt="5" /></td>
-    <td align="center"><img src="/Previews/6.png" width="200" alt="6" /></td>
+    <td align="center"><img src="/Previews/4.png" width="400" alt="4" /></td>
+    <td align="center"><img src="/Previews/5.png" width="400" alt="5" /></td>
+    <td align="center"><img src="/Previews/6.png" width="400" alt="6" /></td>
   </tr>
   <tr>
-    <td align="center"><img src="/Previews/7.png" width="200" alt="7" /></td>
-    <td align="center"><img src="/Previews/8.png" width="200" alt="8" /></td>
-    <td align="center"><img src="/Previews/9.png" width="200" alt="9" /></td>
+    <td align="center"><img src="/Previews/7.png" width="400" alt="7" /></td>
+    <td align="center"><img src="/Previews/8.png" width="400" alt="8" /></td>
+    <td align="center"><img src="/Previews/9.png" width="400" alt="9" /></td>
   </tr>
 </table>
 
