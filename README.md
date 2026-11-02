@@ -1,10 +1,5 @@
 # A∙CHIK SEVENTH-DAY ADVENTIST GITRANG_Version_2.0
 
-<p align="center">
-<img src="/Previews/1.png"/>
-</p>
-
-<img src="/previews/gif.gif" align="right" width="320"/>
 
 ### Gallery (9 Images Grid)
 
