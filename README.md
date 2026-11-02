@@ -1,11 +1,11 @@
 # A∙CHIK SEVENTH-DAY ADVENTIST GITRANG_Version_2.0
 
 
-<table align="Centre" width="100%" cellpadding="8">
+<table align="center" width="100%" cellpadding="8">
   <tr>
-    <td align="center"><img src="/Previews/1.png" width="200" alt="1" /></td>
-    <td align="center"><img src="/Previews/2.png" width="200" alt="2" /></td>
-    <td align="center"><img src="/Previews/3.png" width="200" alt="3" /></td>
+    <td align="center"><img src="/Previews/1.png" width="400" alt="1" /></td>
+    <td align="center"><img src="/Previews/2.png" width="400" alt="2" /></td>
+    <td align="center"><img src="/Previews/3.png" width="400" alt="3" /></td>
   </tr>
   <tr>
     <td align="center"><img src="/Previews/4.png" width="200" alt="4" /></td>
