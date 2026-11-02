@@ -52,14 +52,9 @@
   }
 </style>
 
-<!-- Main Preview Image -->
-<img src="/Previews/1.png" width="80%" class="hero-img"/>
 
-</div>
 
-<img src="/previews/gif.gif" align="right" width="320"/>
 
-### 📸 Gallery (3x3 Preview Grid)
 
 <table class="readme-gallery">
   <tr>
