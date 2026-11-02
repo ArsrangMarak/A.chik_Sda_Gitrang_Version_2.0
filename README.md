@@ -1,27 +1,26 @@
 # A∙CHIK SEVENTH-DAY ADVENTIST GITRANG_Version_2.0
 
 
-
-<table class="readme-gallery">
+<table align="center" width="100%" cellpadding="8">
   <tr>
-    <td><img src="/Previews/1.png"/></td>
-    <td><img src="/Previews/2.png"/></td>
-    <td><img src="/Previews/3.png"/></td>
+    <td align="center"><img src="/Previews/1.png" width="200" alt="1" /></td>
+    <td align="center"><img src="/Previews/2.png" width="200" alt="2" /></td>
+    <td align="center"><img src="/Previews/3.png" width="200" alt="3" /></td>
   </tr>
   <tr>
-    <td><img src="/Previews/4.png"/></td>
-    <td><img src="/Previews/5.png"/></td>
-    <td><img src="/Previews/6.png"/></td>
+    <td align="center"><img src="/Previews/4.png" width="200" alt="4" /></td>
+    <td align="center"><img src="/Previews/5.png" width="200" alt="5" /></td>
+    <td align="center"><img src="/Previews/6.png" width="200" alt="6" /></td>
   </tr>
   <tr>
-    <td><img src="/Previews/7.png"/></td>
-    <td><img src="/Previews/8.png"/></td>
-    <td><img src="/Previews/9.png"/></td>
+    <td align="center"><img src="/Previews/7.png" width="200" alt="7" /></td>
+    <td align="center"><img src="/Previews/8.png" width="200" alt="8" /></td>
+    <td align="center"><img src="/Previews/9.png" width="200" alt="9" /></td>
   </tr>
 </table>
 
-clear: both;
+<br clear="left"/>
 
-<div class="footer-box">
-  <h4>Find this repository useful? Leave a ⭐ for this repository and <a href="https://github.com/ArsrangMarak">follow me on GitHub 🤩</a></h4>
+<div align="center">
+  <h3>Find this repository useful? Leave a ⭐ for this repository and <a href="https://github.com/ArsrangMarak">follow me on GitHub 🤩</a></h3>
 </div>
