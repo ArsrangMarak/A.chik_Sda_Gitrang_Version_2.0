@@ -3,47 +3,94 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Privacy Policy - A&middot;chik Sda Gitrang</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <script>
+        (function () {
+            try {
+                var params = new URLSearchParams(window.location.search);
+                if (params.get('theme') === 'dark' || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                }
+            } catch (e) { }
+        })();
+    </script>
     <style>
         :root {
             --primary: #0096E6;
             --primary-dark: #0077B6;
             --primary-light: #E0F2FE;
+            --primary-subtle: #F0F9FF;
             --accent-green: #00A884;
-            --accent-gold: #FBC02D;
+            --accent-green-light: #E6F7F2;
+            --accent-gold: #F59E0B;
+            --accent-gold-light: #FEF3C7;
             --bg-color: #F8FAFC;
             --card-bg: #FFFFFF;
             --text-main: #0F172A;
             --text-muted: #475569;
+            --text-subtle: #64748B;
             --border-color: #E2E8F0;
-            --card-subtle: #F1F5F9;
+            --card-subtle: #F8FAFC;
+            --card-hover: #F1F5F9;
             --tag-bg: #E0F2FE;
-            --tag-text: #0369A1;
-            --code-bg: #F1F5F9;
+            --tag-text: #0284C7;
+            --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+            --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+        }
+
+        :root.dark,
+        html.dark,
+        body.dark {
+            --primary: #38BDF8;
+            --primary-dark: #0284C7;
+            --primary-light: #0C4A6E;
+            --primary-subtle: #082F49;
+            --accent-green: #10B981;
+            --accent-green-light: #064E3B;
+            --accent-gold: #FBBF24;
+            --accent-gold-light: #78350F;
+            --bg-color: #0B141B;
+            --card-bg: #111B21;
+            --text-main: #F1F5F9;
+            --text-muted: #94A3B8;
+            --text-subtle: #64748B;
+            --border-color: #202C33;
+            --card-subtle: #17242C;
+            --card-hover: #1F2C34;
+            --tag-bg: #1E293B;
+            --tag-text: #38BDF8;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+            --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.35);
         }
 
         @media (prefers-color-scheme: dark) {
-            :root {
+            :root:not(.light) {
                 --primary: #38BDF8;
                 --primary-dark: #0284C7;
                 --primary-light: #0C4A6E;
-                --accent-green: #00A884;
-                --accent-gold: #FCD34D;
+                --primary-subtle: #082F49;
+                --accent-green: #10B981;
+                --accent-green-light: #064E3B;
+                --accent-gold: #FBBF24;
+                --accent-gold-light: #78350F;
                 --bg-color: #0B141B;
                 --card-bg: #111B21;
                 --text-main: #F1F5F9;
                 --text-muted: #94A3B8;
+                --text-subtle: #64748B;
                 --border-color: #202C33;
-                --card-subtle: #1F2C34;
+                --card-subtle: #17242C;
+                --card-hover: #1F2C34;
                 --tag-bg: #1E293B;
                 --tag-text: #38BDF8;
-                --code-bg: #1E293B;
+                --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
+                --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.35);
             }
         }
 
@@ -53,53 +100,59 @@
             padding: 0;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.75;
-            padding: 40px 16px;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            line-height: 1.7;
+            padding: 32px 16px;
+            transition: background-color 0.25s ease, color 0.25s ease;
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 880px;
+            max-width: 860px;
             margin: 0 auto;
             background: var(--card-bg);
             border-radius: 24px;
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+            box-shadow: var(--shadow-md);
             border: 1px solid var(--border-color);
-            padding: 52px;
+            padding: 44px 40px;
         }
 
         @media (max-width: 640px) {
             body {
-                padding: 16px 10px;
+                padding: 10px 8px;
             }
 
             .container {
-                padding: 24px 18px;
+                padding: 22px 16px;
                 border-radius: 18px;
             }
         }
 
+        /* ═════════ HEADER ═════════ */
         .header {
             border-bottom: 2px solid var(--border-color);
-            padding-bottom: 32px;
-            margin-bottom: 36px;
+            padding-bottom: 28px;
+            margin-bottom: 32px;
         }
 
         .header-content {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 22px;
         }
 
         .app-logo {
             width: 88px;
             height: 88px;
             border-radius: 22px;
-            box-shadow: 0 10px 24px rgba(0, 150, 230, 0.25);
+            box-shadow: 0 10px 24px rgba(0, 150, 230, 0.22);
             border: 2px solid var(--border-color);
             object-fit: cover;
             flex-shrink: 0;
@@ -124,76 +177,153 @@
             flex: 1;
         }
 
+        .badge-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
             background-color: var(--tag-bg);
             color: var(--tag-text);
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
-            padding: 5px 14px;
+            padding: 4px 12px;
             border-radius: 999px;
-            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.8px;
+            letter-spacing: 0.6px;
         }
 
         .badge-dot {
             width: 7px;
             height: 7px;
-            background-color: var(--primary);
+            background-color: var(--accent-green);
             border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(0, 168, 132, 0.2);
         }
 
         h1 {
             font-family: 'Outfit', sans-serif;
-            font-size: 34px;
+            font-size: 32px;
             font-weight: 800;
             color: var(--text-main);
-            line-height: 1.25;
-            margin-bottom: 6px;
+            line-height: 1.2;
+            margin-bottom: 4px;
             letter-spacing: -0.5px;
         }
 
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 26px;
+            }
+        }
+
         .app-subname {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 600;
             color: var(--primary);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
-        .effective-date {
-            font-size: 13.5px;
-            color: var(--text-muted);
+        .meta-badges {
             display: flex;
-            align-items: center;
-            gap: 6px;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
         }
 
-        /* Quick Navigation Menu */
+        .meta-chip {
+            font-size: 12.5px;
+            color: var(--text-muted);
+            background: var(--card-subtle);
+            border: 1px solid var(--border-color);
+            padding: 3px 10px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ═════════ TRUST HIGHLIGHTS GRID ═════════ */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin: 24px 0 32px 0;
+        }
+
+        .trust-card {
+            background: var(--card-subtle);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .trust-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .trust-icon {
+            font-size: 20px;
+            line-height: 1;
+            padding: 8px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            flex-shrink: 0;
+        }
+
+        .trust-text h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 2px;
+        }
+
+        .trust-text p {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: 0;
+        }
+
+        /* ═════════ TABLE OF CONTENTS ═════════ */
         .toc-box {
             background: var(--card-subtle);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 22px 26px;
-            margin: 30px 0 40px 0;
+            padding: 20px 22px;
+            margin: 28px 0 36px 0;
         }
 
         .toc-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 700;
             color: var(--text-main);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 14px;
+            letter-spacing: 0.8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
         .toc-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 10px 18px;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 8px 16px;
             list-style: none;
             padding-left: 0;
             margin: 0;
@@ -211,26 +341,43 @@
         .toc-grid a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 500;
-            transition: color 0.2s ease;
+            transition: color 0.15s ease;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            padding: 4px 6px;
+            border-radius: 6px;
         }
 
         .toc-grid a:hover {
             color: var(--primary);
-            text-decoration: underline;
+            background: var(--card-hover);
         }
 
+        .toc-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            font-size: 11px;
+            font-weight: 700;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        /* ═════════ SECTIONS & TYPOGRAPHY ═════════ */
         h2 {
             font-family: 'Outfit', sans-serif;
-            font-size: 23px;
+            font-size: 21px;
             font-weight: 700;
             color: var(--text-main);
-            margin-top: 42px;
-            margin-bottom: 16px;
+            margin-top: 38px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -241,35 +388,36 @@
             content: "";
             display: inline-block;
             width: 4px;
-            height: 22px;
+            height: 20px;
             background: linear-gradient(180deg, var(--primary), var(--primary-dark));
             border-radius: 2px;
+            flex-shrink: 0;
         }
 
         h3 {
             font-family: 'Outfit', sans-serif;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 600;
             color: var(--text-main);
-            margin-top: 24px;
-            margin-bottom: 10px;
+            margin-top: 20px;
+            margin-bottom: 8px;
         }
 
         p {
             color: var(--text-muted);
-            margin-bottom: 16px;
-            font-size: 15px;
+            margin-bottom: 14px;
+            font-size: 14.5px;
         }
 
         .highlight-box {
             background-color: var(--primary-light);
             border-left: 4px solid var(--primary);
-            padding: 18px 22px;
-            border-radius: 0 14px 14px 0;
-            margin: 22px 0;
-            font-size: 15px;
+            padding: 16px 20px;
+            border-radius: 0 12px 12px 0;
+            margin: 20px 0;
+            font-size: 14.5px;
             color: var(--text-main);
-            line-height: 1.65;
+            line-height: 1.6;
         }
 
         .highlight-box strong {
@@ -279,34 +427,35 @@
         ul {
             list-style: none;
             padding-left: 0;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         li {
             position: relative;
-            padding-left: 26px;
+            padding-left: 24px;
             margin-bottom: 10px;
             color: var(--text-muted);
-            font-size: 15px;
+            font-size: 14.5px;
         }
 
         li::before {
             content: "\2022";
             position: absolute;
-            left: 10px;
+            left: 8px;
             top: 0;
             color: var(--primary);
-            font-size: 20px;
+            font-size: 18px;
             line-height: 1.2;
         }
 
+        /* ═════════ PERMISSION & FEATURE CARDS ═════════ */
         .permission-card {
             background: var(--card-subtle);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 18px 20px;
-            margin-bottom: 14px;
-            transition: transform 0.15s ease, border-color 0.15s ease;
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin-bottom: 12px;
+            transition: border-color 0.15s ease;
         }
 
         .permission-card:hover {
@@ -316,90 +465,95 @@
         .permission-title {
             font-family: 'Outfit', sans-serif;
             font-weight: 700;
-            font-size: 15.5px;
+            font-size: 14.5px;
             color: var(--text-main);
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .perm-index {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             background: var(--tag-bg);
             color: var(--tag-text);
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 700;
-            border-radius: 8px;
+            border-radius: 7px;
             text-transform: uppercase;
             flex-shrink: 0;
         }
 
         .permission-desc {
-            font-size: 14px;
+            font-size: 13.5px;
             color: var(--text-muted);
             margin-bottom: 0;
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 16px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+            margin: 18px 0;
         }
 
         .feature-box {
             background: var(--card-subtle);
             border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 18px 20px;
+            border-radius: 12px;
+            padding: 16px 18px;
         }
 
         .feature-box h4 {
             font-family: 'Outfit', sans-serif;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 700;
             color: var(--text-main);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .feature-box p {
-            font-size: 13.5px;
+            font-size: 13px;
             margin-bottom: 0;
-            line-height: 1.6;
+            line-height: 1.55;
         }
 
+        /* ═════════ CONTACT BOX ═════════ */
         .contact-box {
             background: var(--card-subtle);
             border: 1px solid var(--border-color);
-            border-radius: 18px;
-            padding: 28px;
-            margin-top: 44px;
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 36px;
         }
 
         .contact-title {
             font-family: 'Outfit', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             color: var(--text-main);
-            margin-bottom: 14px;
+            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .contact-item {
-            margin-bottom: 10px;
-            font-size: 15px;
+            margin-bottom: 8px;
+            font-size: 14px;
             color: var(--text-muted);
+        }
+
+        .contact-item strong {
+            color: var(--text-main);
         }
 
         .contact-item a {
@@ -412,12 +566,42 @@
             text-decoration: underline;
         }
 
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 16px;
+        }
+
+        .btn-contact {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 10px;
+            font-size: 13.5px;
+            font-weight: 600;
+            text-decoration: none;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            transition: all 0.15s ease;
+        }
+
+        .btn-contact:hover {
+            background: var(--primary);
+            color: #ffffff;
+            border-color: var(--primary);
+            transform: translateY(-1px);
+        }
+
+        /* ═════════ FOOTER ═════════ */
         .footer {
             text-align: center;
-            margin-top: 48px;
-            padding-top: 28px;
+            margin-top: 40px;
+            padding-top: 24px;
             border-top: 1px solid var(--border-color);
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-muted);
         }
     </style>
@@ -429,233 +613,278 @@
         <!-- ═════════ HEADER ═════════ -->
         <header class="header">
             <div class="header-content">
-                <img src="app_icon.png" <span class="badge"><span class="badge-dot"></span> Official Privacy
-                Policy</span>
-                <h1>Privacy Policy</h1>
-                <p class="app-subname">A&middot;chik Sda Gitrang (Garo SDA Hymnal)</p>
-                <p class="effective-date">&#128197; Last Updated: November 7, 2026 &bull; Version 2.0</p>
+                <img src="app_icon.png" alt="A·chik Sda Gitrang App Logo" class="app-logo">
+                <div class="header-text">
+                    <div class="badge-row">
+                        <span class="badge"><span class="badge-dot"></span> Official Privacy Policy</span>
+                        <span class="badge" style="background: var(--accent-green-light); color: var(--accent-green);">&#10003; Verified</span>
+                    </div>
+                    <h1>Privacy Policy</h1>
+                    <p class="app-subname">A&middot;chik Sda Gitrang (Garo SDA Hymnal)</p>
+                    <div class="meta-badges">
+                        <span class="meta-chip">&#128197; Last Updated: November 7, 2026</span>
+                        <span class="meta-chip">&#128737;&#65039; Version 2.0</span>
+                        <span class="meta-chip">&#128274; Zero Ads &bull; 100% Private</span>
+                    </div>
+                </div>
             </div>
-    </div>
-    </header>
+        </header>
 
-    <!-- ═════════ TABLE OF CONTENTS ═════════ -->
-    <nav class="toc-box">
-        <div class="toc-title">Table of Contents</div>
-        <ul class="toc-grid">
-            <li><a href="#overview">1. Overview &amp; Commitment</a></li>
-            <li><a href="#local-data">2. Local Hymnal Storage</a></li>
-            <li><a href="#community-chat">3. Community Songbook Chat</a></li>
-            <li><a href="#billing">4. Financial &amp; Billing</a></li>
-            <li><a href="#audio">5. Audio &amp; Offline Downloads</a></li>
-            <li><a href="#permissions">6. Android Permissions</a></li>
-            <li><a href="#third-party">7. Third-Party Infrastructure</a></li>
-            <li><a href="#children">8. Children's Privacy</a></li>
-            <li><a href="#retention">9. Data Control &amp; Deletion</a></li>
-            <li><a href="#contact">10. Developer Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- ═════════ SECTION 1 ═════════ -->
-    <section id="overview">
-        <h2>1. Overview &amp; Privacy Commitment</h2>
-        <p>Welcome to <strong>A&middot;chik Sda Gitrang</strong> (Garo SDA Hymnal). This application is created to
-            facilitate Christian worship, hymnal study, personal devotions, congregational singing, and meaningful
-            spiritual fellowship for the Garo-speaking Christian community worldwide.</p>
-
-        <div class="highlight-box">
-            <strong>Our Sacred Privacy Commitment:</strong> We respect your privacy completely. We do
-            <strong>not</strong> sell, rent, monetize, or exploit your personal information. We do <strong>not</strong>
-            track your physical location, reading habits, or search queries. The app contains <strong>zero third-party
-                advertisement networks</strong> and <strong>zero commercial user-tracking trackers</strong>.
-        </div>
-    </section>
-
-    <!-- ═════════ SECTION 2 ═════════ -->
-    <section id="local-data">
-        <h2>2. Local Hymnal Data &amp; Preferences</h2>
-        <p>For the core hymnal experience, the app operates entirely on your local device without requiring an account
-            or sign-in:</p>
-        <ul>
-            <li><strong>No Mandatory Account Creation:</strong> You can read, search, and sing all hymns without
-                providing any email address, phone number, password, or real name.</li>
-            <li><strong>Favorites &amp; Bookmarks:</strong> Your marked favorite hymns and personal bookmarks are saved
-                exclusively in your device's private local database (Room / DataStore).</li>
-            <li><strong>Display &amp; Font Preferences:</strong> Custom font sizes, dark mode preferences, and audio
-                player settings remain strictly inside your device sandbox and are never transmitted to external
-                servers.</li>
-            <li><strong>Local Reset:</strong> Uninstalling the app or clearing application storage in Android system
-                settings permanently wipes all locally stored preferences.</li>
-        </ul>
-    </section>
-
-    <!-- ═════════ SECTION 3 ═════════ -->
-    <section id="community-chat">
-        <h2>3. Community Songbook Chat &amp; Public Fellowship</h2>
-        <p>The app features a built-in <strong>Community Songbook Chat</strong> to enable Garo hymn lovers and church
-            members to connect, share hymn reflections, request song tunes, and fellowship together.</p>
-
-        <div class="feature-grid">
-            <div class="feature-box">
-                <h4>&#128100; Guest Profile Information</h4>
-                <p>To join the chat, you voluntarily choose a display name (e.g., "Guest" or your first name) and may
-                    optionally choose a profile avatar. No email, password, or phone verification is needed.</p>
+        <!-- ═════════ TRUST HIGHLIGHTS ═════════ -->
+        <div class="trust-grid">
+            <div class="trust-card">
+                <div class="trust-icon">&#128737;&#65039;</div>
+                <div class="trust-text">
+                    <h4>Zero Advertisements</h4>
+                    <p>No Google AdMob, Meta, or third-party ad networks.</p>
+                </div>
             </div>
-            <div class="feature-box">
-                <h4>&#128172; Messages &amp; Reactions</h4>
-                <p>Chat messages, timestamps, and emoji reactions you share are published to the group and stored
-                    securely in our cloud database (Supabase) so community members can see them.</p>
+            <div class="trust-card">
+                <div class="trust-icon">&#127926;</div>
+                <div class="trust-text">
+                    <h4>Offline-First Hymns</h4>
+                    <p>All 585+ Garo hymns stored locally in your device.</p>
+                </div>
             </div>
-            <div class="feature-box">
-                <h4>&#9200; Offline Message Queuing</h4>
-                <p>If you compose or send a message while offline (no network), the message is held safely on your local
-                    device with a WhatsApp-style Clock (&#128339;) icon until connection returns, at which point it
-                    transmits automatically.</p>
+            <div class="trust-card">
+                <div class="trust-icon">&#128172;</div>
+                <div class="trust-text">
+                    <h4>Safe Songbook Chat</h4>
+                    <p>Guest profile with "Delete for everyone" control.</p>
+                </div>
             </div>
-            <div class="feature-box">
-                <h4>&#128465; Full User Deletion Rights</h4>
-                <p>You can delete your messages at any time using <em>"Delete for everyone"</em> (removes from the cloud
-                    database) or <em>"Delete for me"</em> (removes locally from your device).</p>
+            <div class="trust-card">
+                <div class="trust-icon">&#128106;</div>
+                <div class="trust-text">
+                    <h4>Family &amp; COPPA Safe</h4>
+                    <p>No tracking or data collection from children.</p>
+                </div>
             </div>
         </div>
 
-        <p><strong>Photo Avatar Uploads:</strong> If you choose to upload an avatar photo, it is selected via Android's
-            secure Photo Picker and stored in an encrypted cloud storage bucket managed by Supabase exclusively for your
-            chat avatar.</p>
-    </section>
+        <!-- ═════════ TABLE OF CONTENTS ═════════ -->
+        <nav class="toc-box">
+            <div class="toc-title">&#128220; Table of Contents</div>
+            <ul class="toc-grid">
+                <li><a href="#overview"><span class="toc-num">1</span> Overview &amp; Privacy Commitment</a></li>
+                <li><a href="#local-data"><span class="toc-num">2</span> Local Hymnal Data &amp; Preferences</a></li>
+                <li><a href="#community-chat"><span class="toc-num">3</span> Community Songbook Chat</a></li>
+                <li><a href="#billing"><span class="toc-num">4</span> Financial &amp; Google Play Billing</a></li>
+                <li><a href="#audio"><span class="toc-num">5</span> Audio &amp; Offline Downloads</a></li>
+                <li><a href="#permissions"><span class="toc-num">6</span> Android Permissions Used</a></li>
+                <li><a href="#third-party"><span class="toc-num">7</span> Third-Party Infrastructure</a></li>
+                <li><a href="#children"><span class="toc-num">8</span> Children's Privacy (COPPA)</a></li>
+                <li><a href="#retention"><span class="toc-num">9</span> Data Control &amp; Deletion</a></li>
+                <li><a href="#contact"><span class="toc-num">10</span> Developer Contact Information</a></li>
+            </ul>
+        </nav>
 
-    <!-- ═════════ SECTION 4 ═════════ -->
-    <section id="billing">
-        <h2>4. Financial &amp; Google Play Billing</h2>
-        <p>If you purchase <strong>A&middot;chik Sda Gitrang</strong> on the Google Play Store, all financial
-            transactions and payment processing are handled exclusively and securely by <strong>Google LLC</strong>
-            through the Google Play Store Billing platform.</p>
-        <p>The developer does <strong>not</strong> collect, process, see, or store your credit card numbers, debit card
-            details, bank information, or billing address. All payment details are governed directly by <a
-                href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
-                style="color: var(--primary);">Google's Privacy Policy</a> and the <a
-                href="https://play.google.com/intl/en_us/about/play-terms/" target="_blank" rel="noopener noreferrer"
-                style="color: var(--primary);">Google Play Terms of Service</a>.</p>
-    </section>
+        <!-- ═════════ SECTION 1 ═════════ -->
+        <section id="overview">
+            <h2>1. Overview &amp; Privacy Commitment</h2>
+            <p>Welcome to <strong>A&middot;chik Sda Gitrang</strong> (Garo SDA Hymnal). This application is created to
+                facilitate Christian worship, hymnal study, personal devotions, congregational singing, and meaningful
+                spiritual fellowship for the Garo-speaking Christian community worldwide.</p>
 
-    <!-- ═════════ SECTION 5 ═════════ -->
-    <section id="audio">
-        <h2>5. Audio Streaming &amp; Offline Downloads</h2>
-        <p>To provide high-quality musical accompaniment for worship, hymn tunes can be streamed or downloaded directly
-            to your phone:</p>
-        <ul>
-            <li><strong>Local Audio Sandbox:</strong> Downloaded hymn tunes are stored in the app's isolated private
-                storage directory (<code>Context.getExternalFilesDir / filesDir</code>). Other apps on your device
-                cannot access or modify these files.</li>
-            <li><strong>No Behavioral Tracking:</strong> We do not log which hymns you listen to, when you listen, or
-                how many times you replay a track.</li>
-            <li><strong>Storage Management:</strong> You can delete any individual downloaded hymn audio or all
-                downloaded hymns at any time directly within the Hymn Detail or Settings screen.</li>
-        </ul>
-    </section>
+            <div class="highlight-box">
+                <strong>Our Sacred Privacy Commitment:</strong> We respect your privacy completely. We do
+                <strong>not</strong> sell, rent, monetize, or exploit your personal information. We do <strong>not</strong>
+                track your physical location, reading habits, or search queries. The app contains <strong>zero third-party
+                    advertisement networks</strong> and <strong>zero commercial user-tracking trackers</strong>.
+            </div>
+        </section>
 
-    <!-- ═════════ SECTION 6 ═════════ -->
-    <section id="permissions">
-        <h2>6. Android Permissions Used in the App</h2>
-        <p>The application adheres strictly to Google Play's principle of least privilege, requesting only standard,
-            essential Android permissions:</p>
+        <!-- ═════════ SECTION 2 ═════════ -->
+        <section id="local-data">
+            <h2>2. Local Hymnal Data &amp; Preferences</h2>
+            <p>For the core hymnal experience, the app operates entirely on your local device without requiring an account
+                or sign-in:</p>
+            <ul>
+                <li><strong>No Mandatory Account Creation:</strong> You can read, search, and sing all hymns without
+                    providing any email address, phone number, password, or real name.</li>
+                <li><strong>Favorites &amp; Bookmarks:</strong> Your marked favorite hymns and personal bookmarks are saved
+                    exclusively in your device's private local database (Room / DataStore).</li>
+                <li><strong>Display &amp; Font Preferences:</strong> Custom font sizes, dark mode preferences, and audio
+                    player settings remain strictly inside your device sandbox and are never transmitted to external
+                    servers.</li>
+                <li><strong>Local Reset:</strong> Uninstalling the app or clearing application storage in Android system
+                    settings permanently wipes all locally stored preferences.</li>
+            </ul>
+        </section>
 
-        <div class="permission-card">
-            <div class="permission-title"><span class="perm-index">1</span> INTERNET &amp; ACCESS_NETWORK_STATE</div>
-            <p class="permission-desc">Required to stream hymn audio, check online/offline connectivity status for chat
-                synchronization, and fetch Google Fonts.</p>
-        </div>
+        <!-- ═════════ SECTION 3 ═════════ -->
+        <section id="community-chat">
+            <h2>3. Community Songbook Chat &amp; Public Fellowship</h2>
+            <p>The app features a built-in <strong>Community Songbook Chat</strong> to enable Garo hymn lovers and church
+                members to connect, share hymn reflections, request song tunes, and fellowship together.</p>
 
-        <div class="permission-card">
-            <div class="permission-title"><span class="perm-index">2</span> FOREGROUND_SERVICE &amp;
-                FOREGROUND_SERVICE_MEDIA_PLAYBACK</div>
-            <p class="permission-desc">Allows hymn music to continue playing seamlessly in the background when you turn
-                off the screen or use other apps during personal or family devotions.</p>
-        </div>
+            <div class="feature-grid">
+                <div class="feature-box">
+                    <h4>&#128100; Guest Profile Information</h4>
+                    <p>To join the chat, you voluntarily choose a display name (e.g., "Guest" or your first name) and may
+                        optionally choose a profile avatar. No email, password, or phone verification is needed.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>&#128172; Messages &amp; Reactions</h4>
+                    <p>Chat messages, timestamps, and emoji reactions you share are published to the group and stored
+                        securely in our cloud database (Supabase) so community members can see them.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>&#9200; Offline Message Queuing</h4>
+                    <p>If you compose or send a message while offline (no network), the message is held safely on your local
+                        device with a WhatsApp-style Clock (&#128339;) icon until connection returns, at which point it
+                        transmits automatically.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>&#128465; Full User Deletion Rights</h4>
+                    <p>You can delete your messages at any time using <em>"Delete for everyone"</em> (removes from the cloud
+                        database) or <em>"Delete for me"</em> (removes locally from your device).</p>
+                </div>
+            </div>
 
-        <div class="permission-card">
-            <div class="permission-title"><span class="perm-index">3</span> FOREGROUND_SERVICE_DATA_SYNC</div>
-            <p class="permission-desc">Enables reliable batch downloading of hymn audio files in the background without
-                interruptions from OS battery optimization.</p>
-        </div>
+            <p><strong>Photo Avatar Uploads:</strong> If you choose to upload an avatar photo, it is selected via Android's
+                secure Photo Picker and stored in an encrypted cloud storage bucket managed by Supabase exclusively for your
+                chat avatar.</p>
+        </section>
 
-        <div class="permission-card">
-            <div class="permission-title"><span class="perm-index">4</span> POST_NOTIFICATIONS (Android 13+)</div>
-            <p class="permission-desc">Used strictly to display media playback controls (Play, Pause, Rewind 10s, Skip
-                10s) and download progress in your system notification bar.</p>
-        </div>
+        <!-- ═════════ SECTION 4 ═════════ -->
+        <section id="billing">
+            <h2>4. Financial &amp; Google Play Billing</h2>
+            <p>If you purchase <strong>A&middot;chik Sda Gitrang</strong> on the Google Play Store, all financial
+                transactions and payment processing are handled exclusively and securely by <strong>Google LLC</strong>
+                through the Google Play Store Billing platform.</p>
+            <p>The developer does <strong>not</strong> collect, process, see, or store your credit card numbers, debit card
+                details, bank information, or billing address. All payment details are governed directly by <a
+                    href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+                    style="color: var(--primary);">Google's Privacy Policy</a> and the <a
+                    href="https://play.google.com/intl/en_us/about/play-terms/" target="_blank" rel="noopener noreferrer"
+                    style="color: var(--primary);">Google Play Terms of Service</a>.</p>
+        </section>
 
-        <div class="permission-card">
-            <div class="permission-title"><span class="perm-index">5</span> WAKE_LOCK</div>
-            <p class="permission-desc">Ensures continuous audio playback without abrupt cuts or stutters when the phone
-                enters low-power sleep mode.</p>
-        </div>
+        <!-- ═════════ SECTION 5 ═════════ -->
+        <section id="audio">
+            <h2>5. Audio Streaming &amp; Offline Downloads</h2>
+            <p>To provide high-quality musical accompaniment for worship, hymn tunes can be streamed or downloaded directly
+                to your phone:</p>
+            <ul>
+                <li><strong>Local Audio Sandbox:</strong> Downloaded hymn tunes are stored in the app's isolated private
+                    storage directory (<code>Context.getExternalFilesDir / filesDir</code>). Other apps on your device
+                    cannot access or modify these files.</li>
+                <li><strong>No Behavioral Tracking:</strong> We do not log which hymns you listen to, when you listen, or
+                    how many times you replay a track.</li>
+                <li><strong>Storage Management:</strong> You can delete any individual downloaded hymn audio or all
+                    downloaded hymns at any time directly within the Hymn Detail or Settings screen.</li>
+            </ul>
+        </section>
 
-        <p style="margin-top: 14px;"><strong>No Sensitive Permissions:</strong> We never request sensitive or intrusive
-            permissions such as precise GPS Location, Contacts, SMS, Microphone, Phone State, or broad external storage
-            access.</p>
-    </section>
+        <!-- ═════════ SECTION 6 ═════════ -->
+        <section id="permissions">
+            <h2>6. Android Permissions Used in the App</h2>
+            <p>The application adheres strictly to Google Play's principle of least privilege, requesting only standard,
+                essential Android permissions:</p>
 
-    <!-- ═════════ SECTION 7 ═════════ -->
-    <section id="third-party">
-        <h2>7. Third-Party Services &amp; Infrastructure</h2>
-        <p>The application utilizes trusted, industry-standard infrastructure providers to operate securely:</p>
-        <ul>
-            <li><strong>Supabase Inc.:</strong> Open-source, enterprise-grade backend infrastructure provider used for
-                the Community Chat database (PostgreSQL), real-time messaging, and avatar storage. Supabase complies
-                with strict international data protection standards (GDPR, SOC2 Type II). Learn more at <a
-                    href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer"
-                    style="color: var(--primary);">Supabase Privacy Policy</a>.</li>
-            <li><strong>Google Play Services:</strong> Used for app distribution, Google Play Billing, and system font
-                rendering (Google Fonts). Governed by <a href="https://policies.google.com/privacy" target="_blank"
-                    rel="noopener noreferrer" style="color: var(--primary);">Google Privacy Policy</a>.</li>
-            <li><strong>Zero Advertising Networks:</strong> We do not integrate Google AdMob, Unity Ads, Meta Audience
-                Network, or any other commercial ad network.</li>
-        </ul>
-    </section>
+            <div class="permission-card">
+                <div class="permission-title"><span class="perm-index">1</span> INTERNET &amp; ACCESS_NETWORK_STATE</div>
+                <p class="permission-desc">Required to stream hymn audio, check online/offline connectivity status for chat
+                    synchronization, and fetch Google Fonts.</p>
+            </div>
 
-    <!-- ═════════ SECTION 8 ═════════ -->
-    <section id="children">
-        <h2>8. Children's Privacy (COPPA Compliance)</h2>
-        <p><strong>A&middot;chik Sda Gitrang</strong> is built for church congregations, families, youth, and children.
-            We do not knowingly collect personal identifiable information from children under the age of 13. The app
-            contains no mature content, no violence, no tracking, and no commercial advertisements.</p>
-    </section>
+            <div class="permission-card">
+                <div class="permission-title"><span class="perm-index">2</span> FOREGROUND_SERVICE &amp;
+                    FOREGROUND_SERVICE_MEDIA_PLAYBACK</div>
+                <p class="permission-desc">Allows hymn music to continue playing seamlessly in the background when you turn
+                    off the screen or use other apps during personal or family devotions.</p>
+            </div>
 
-    <!-- ═════════ SECTION 9 ═════════ -->
-    <section id="retention">
-        <h2>9. Data Retention &amp; User Rights</h2>
-        <p>You maintain full control over your information:</p>
-        <ul>
-            <li><strong>Edit &amp; Delete Messages:</strong> You can edit or permanently delete your sent chat messages
-                directly inside the chat interface using "Delete for everyone".</li>
-            <li><strong>Profile Clearing:</strong> You can reset or update your display name and avatar photo anytime in
-                the chat settings.</li>
-            <li><strong>Complete Data Erasure:</strong> To delete all local data, clear the app's cache and data via
-                Android Settings &gt; Apps &gt; A&middot;chik Sda Gitrang &gt; Storage &gt; Clear Storage, or simply
-                uninstall the application.</li>
-        </ul>
-    </section>
+            <div class="permission-card">
+                <div class="permission-title"><span class="perm-index">3</span> FOREGROUND_SERVICE_DATA_SYNC</div>
+                <p class="permission-desc">Enables reliable batch downloading of hymn audio files in the background without
+                    interruptions from OS battery optimization.</p>
+            </div>
 
-    <!-- ═════════ SECTION 10 ═════════ -->
-    <section id="contact" class="contact-box">
-        <div class="contact-title">&#128233; 10. Developer Contact Information</div>
-        <p class="contact-item">If you have any questions, suggestions, or concerns regarding this Privacy Policy or
-            your data, please contact the developer directly:</p>
-        <p class="contact-item"><strong>Developer:</strong> Arsrang Ch. Marak</p>
-        <p class="contact-item"><strong>Email:</strong> <a href="mailto:arsrang7777@gmail.com">arsrang7777@gmail.com</a>
-        </p>
-        <p class="contact-item"><strong>Facebook:</strong> <a href="https://www.facebook.com/arsrang.marak.5/"
-                target="_blank" rel="noopener noreferrer">facebook.com/arsrang.marak.5</a></p>
-        <p class="contact-item"><strong>GitHub:</strong> <a href="https://github.com/arsrangmarak" target="_blank"
-                rel="noopener noreferrer">github.com/arsrangmarak</a></p>
-    </section>
+            <div class="permission-card">
+                <div class="permission-title"><span class="perm-index">4</span> POST_NOTIFICATIONS (Android 13+)</div>
+                <p class="permission-desc">Used strictly to display media playback controls (Play, Pause, Rewind 10s, Skip
+                    10s) and download progress in your system notification bar.</p>
+            </div>
 
-    <!-- ═════════ FOOTER ═════════ -->
-    <footer class="footer">
-        <p>&copy; 2026 A&middot;chik Sda Gitrang (Garo SDA Hymnal). All rights reserved.</p>
-        <p style="margin-top: 4px; font-size: 12px; color: var(--text-muted);">Dedicated to the spiritual upliftment of
-            the Garo Christian community worldwide.</p>
-    </footer>
+            <div class="permission-card">
+                <div class="permission-title"><span class="perm-index">5</span> WAKE_LOCK</div>
+                <p class="permission-desc">Ensures continuous audio playback without abrupt cuts or stutters when the phone
+                    enters low-power sleep mode.</p>
+            </div>
+
+            <p style="margin-top: 14px;"><strong>No Sensitive Permissions:</strong> We never request sensitive or intrusive
+                permissions such as precise GPS Location, Contacts, SMS, Microphone, Phone State, or broad external storage
+                access.</p>
+        </section>
+
+        <!-- ═════════ SECTION 7 ═════════ -->
+        <section id="third-party">
+            <h2>7. Third-Party Services &amp; Infrastructure</h2>
+            <p>The application utilizes trusted, industry-standard infrastructure providers to operate securely:</p>
+            <ul>
+                <li><strong>Supabase Inc.:</strong> Open-source, enterprise-grade backend infrastructure provider used for
+                    the Community Chat database (PostgreSQL), real-time messaging, and avatar storage. Supabase complies
+                    with strict international data protection standards (GDPR, SOC2 Type II). Learn more at <a
+                        href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer"
+                        style="color: var(--primary);">Supabase Privacy Policy</a>.</li>
+                <li><strong>Google Play Services:</strong> Used for app distribution, Google Play Billing, and system font
+                    rendering (Google Fonts). Governed by <a href="https://policies.google.com/privacy" target="_blank"
+                        rel="noopener noreferrer" style="color: var(--primary);">Google Privacy Policy</a>.</li>
+                <li><strong>Zero Advertising Networks:</strong> We do not integrate Google AdMob, Unity Ads, Meta Audience
+                    Network, or any other commercial ad network.</li>
+            </ul>
+        </section>
+
+        <!-- ═════════ SECTION 8 ═════════ -->
+        <section id="children">
+            <h2>8. Children's Privacy (COPPA Compliance)</h2>
+            <p><strong>A&middot;chik Sda Gitrang</strong> is built for church congregations, families, youth, and children.
+                We do not knowingly collect personal identifiable information from children under the age of 13. The app
+                contains no mature content, no violence, no tracking, and no commercial advertisements.</p>
+        </section>
+
+        <!-- ═════════ SECTION 9 ═════════ -->
+        <section id="retention">
+            <h2>9. Data Retention &amp; User Rights</h2>
+            <p>You maintain full control over your information:</p>
+            <ul>
+                <li><strong>Edit &amp; Delete Messages:</strong> You can edit or permanently delete your sent chat messages
+                    directly inside the chat interface using "Delete for everyone".</li>
+                <li><strong>Profile Clearing:</strong> You can reset or update your display name and avatar photo anytime in
+                    the chat settings.</li>
+                <li><strong>Complete Data Erasure:</strong> To delete all local data, clear the app's cache and data via
+                    Android Settings &gt; Apps &gt; A&middot;chik Sda Gitrang &gt; Storage &gt; Clear Storage, or simply
+                    uninstall the application.</li>
+            </ul>
+        </section>
+
+        <!-- ═════════ SECTION 10 ═════════ -->
+        <section id="contact" class="contact-box">
+            <div class="contact-title">&#128233; 10. Developer Contact Information</div>
+            <p class="contact-item">If you have any questions, suggestions, or concerns regarding this Privacy Policy or
+                your data, please contact the developer directly:</p>
+            <p class="contact-item"><strong>Developer:</strong> Arsrang Ch. Marak</p>
+            <p class="contact-item"><strong>Email:</strong> <a href="mailto:arsrang7777@gmail.com">arsrang7777@gmail.com</a></p>
+            <p class="contact-item"><strong>Facebook:</strong> <a href="https://www.facebook.com/arsrang.marak.5/"
+                    target="_blank" rel="noopener noreferrer">facebook.com/arsrang.marak.5</a></p>
+            <p class="contact-item"><strong>GitHub:</strong> <a href="https://github.com/arsrangmarak" target="_blank"
+                    rel="noopener noreferrer">github.com/arsrangmarak</a></p>
+
+            <div class="contact-buttons">
+                <a href="mailto:arsrang7777@gmail.com" class="btn-contact">&#9993;&#65039; Send Email</a>
+                <a href="https://www.facebook.com/arsrang.marak.5/" target="_blank" rel="noopener noreferrer" class="btn-contact">&#128172; Facebook Profile</a>
+                <a href="https://github.com/arsrangmarak" target="_blank" rel="noopener noreferrer" class="btn-contact">&#128187; GitHub Profile</a>
+            </div>
+        </section>
+
+        <!-- ═════════ FOOTER ═════════ -->
+        <footer class="footer">
+            <p>&copy; 2026 A&middot;chik Sda Gitrang (Garo SDA Hymnal). All rights reserved.</p>
+            <p style="margin-top: 4px; font-size: 12px; color: var(--text-muted);">Dedicated to the spiritual upliftment of
+                the Garo Christian community worldwide.</p>
+        </footer>
     </div>
 
 </body>
